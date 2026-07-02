@@ -4,12 +4,11 @@ import type { AppDatabase } from './types';
 const DATA_ROOT = '/data';
 
 export function loadDatabase(p: p5): AppDatabase {
-  const loader = p as any;
   return {
-    produtosBrasileiros: loader.loadTable(`${DATA_ROOT}/Produtos brasileiros.tsv`, 'tsv', 'header'),
-    produtosInternacionais: loader.loadTable(`${DATA_ROOT}/Produtos internacionais.tsv`, 'tsv', 'header'),
-    escolas: loader.loadTable(`${DATA_ROOT}/Escolas.tsv`, 'tsv', 'header'),
-    eventos: loader.loadTable(`${DATA_ROOT}/Eventos_contexto.tsv`, 'tsv', 'header'),
-    mapaMundi: loader.loadJSON(`${DATA_ROOT}/custom.geo.json`)
+    produtosBrasileiros: p.loadTable(`${DATA_ROOT}/Produtos brasileiros.tsv`, 'tsv', 'header') as p5.Table,
+    produtosInternacionais: p.loadTable(`${DATA_ROOT}/Produtos internacionais.tsv`, 'tsv', 'header') as p5.Table,
+    escolas: p.loadTable(`${DATA_ROOT}/Escolas.tsv`, 'tsv', 'header') as p5.Table,
+    eventos: p.loadTable(`${DATA_ROOT}/Eventos_contexto.tsv`, 'tsv', 'header') as p5.Table,
+    mapaMundi: p.loadJSON(`${DATA_ROOT}/custom.geo.json`)
   };
 }

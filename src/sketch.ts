@@ -5,7 +5,7 @@ import type { AppDatabase } from './core/types';
 export const sketch = (p: p5) => {
   let database: AppDatabase | null = null;
 
-  (p as any).preload = () => {
+  p.preload = () => {
     database = loadDatabase(p);
   };
 
