@@ -1,0 +1,22 @@
+{
+  "name": "sistema-visualizacao-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "d3-dsv": "^3.0.1",
+    "d3-geo": "^3.1.1",
+    "p5": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/d3-dsv": "^3.0.7",
+    "@types/d3-geo": "^3.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  }
+}
